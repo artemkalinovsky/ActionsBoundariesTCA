@@ -1,7 +1,6 @@
 import SwiftUI
 import ComposableArchitecture
 
-// MARK: - TCAView
 public protocol TCAView: View where Body == WithViewStore<ScopedState, ScopedAction, Content> {
     associatedtype ViewState
     associatedtype ViewAction
@@ -34,37 +33,16 @@ extension TCAView where ViewAction == ScopedAction {
 
 extension TCAView {
     public var body: Body {
-        WithViewStore(store.scope(state: scopeState, action: scopeAction), removeDuplicates: isDuplicate, content: storeView)
-    }
-}
-
-// MARK: - ViewStateProvider
-@dynamicMemberLookup
-public protocol ViewStateProvider {
-    associatedtype ViewState
-
-    var viewState: ViewState { get set }
-}
-
-extension ViewStateProvider {
-    public subscript<T>(dynamicMember keyPath: KeyPath<ViewState, T>) -> T {
-        viewState[keyPath: keyPath]
-    }
-    public subscript<T>(dynamicMember keyPath: WritableKeyPath<ViewState, T>) -> T {
-        get { viewState[keyPath: keyPath] }
-        set { viewState[keyPath: keyPath] = newValue }
+        WithViewStore(
+            store.scope(state: scopeState, action: scopeAction),
+            removeDuplicates: isDuplicate,
+            content: storeView
+        )
     }
 }
 
 extension TCAView where ViewState: ViewStateProvider, ScopedState == ViewState.ViewState {
     public func scopeState(_ state: ViewState) -> ScopedState { state.viewState }
-}
-
-// MARK: - ViewActionProvider
-public protocol ViewActionProvider {
-    associatedtype ViewAction
-
-    static func view(_: ViewAction) -> Self
 }
 
 extension TCAView where ViewAction: ViewActionProvider, ScopedAction == ViewAction.ViewAction {
