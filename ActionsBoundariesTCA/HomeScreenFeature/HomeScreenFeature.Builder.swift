@@ -12,7 +12,7 @@ extension HomeScreenFeature {
     static func build() -> UIViewController {
         HomeScreenFeature.ViewController(
             store: Store(
-                initialState: HomeScreenFeature.State(),
+                initialState: HomeScreenFeature.State(viewState: .init(todos: [])),
                 reducer: HomeScreenFeature()
             )
         )

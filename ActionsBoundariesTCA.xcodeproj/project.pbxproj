@@ -18,6 +18,7 @@
 		C856B99A29E064E40086D454 /* HomeScreenFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C856B99929E064E40086D454 /* HomeScreenFeature.swift */; };
 		C856B99C29E065ED0086D454 /* HomeScreenFeature.Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C856B99B29E065ED0086D454 /* HomeScreenFeature.Builder.swift */; };
 		C856B99E29E0664D0086D454 /* HomeScreenFeature.ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C856B99D29E0664D0086D454 /* HomeScreenFeature.ViewController.swift */; };
+		C856B9A029E06E500086D454 /* SwiftUIAbstractionUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C856B99F29E06E500086D454 /* SwiftUIAbstractionUsage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		C856B99929E064E40086D454 /* HomeScreenFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenFeature.swift; sourceTree = "<group>"; };
 		C856B99B29E065ED0086D454 /* HomeScreenFeature.Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenFeature.Builder.swift; sourceTree = "<group>"; };
 		C856B99D29E0664D0086D454 /* HomeScreenFeature.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenFeature.ViewController.swift; sourceTree = "<group>"; };
+		C856B99F29E06E500086D454 /* SwiftUIAbstractionUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAbstractionUsage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				C856B98829E05B2F0086D454 /* Info.plist */,
 				C856B97A29E05B2D0086D454 /* AppDelegate.swift */,
 				C856B97C29E05B2D0086D454 /* SceneDelegate.swift */,
+				C856B99F29E06E500086D454 /* SwiftUIAbstractionUsage.swift */,
 				C856B98329E05B2F0086D454 /* Assets.xcassets */,
 				C856B99429E05D490086D454 /* Abstraction */,
 				C856B99729E064930086D454 /* HomeScreenFeature */,
@@ -177,6 +180,7 @@
 				C856B97B29E05B2D0086D454 /* AppDelegate.swift in Sources */,
 				C856B99E29E0664D0086D454 /* HomeScreenFeature.ViewController.swift in Sources */,
 				C856B99629E05D700086D454 /* UIKitAbstration.swift in Sources */,
+				C856B9A029E06E500086D454 /* SwiftUIAbstractionUsage.swift in Sources */,
 				C856B99A29E064E40086D454 /* HomeScreenFeature.swift in Sources */,
 				C856B99229E05C6A0086D454 /* SwiftUIAbstraction.swift in Sources */,
 				C856B99C29E065ED0086D454 /* HomeScreenFeature.Builder.swift in Sources */,

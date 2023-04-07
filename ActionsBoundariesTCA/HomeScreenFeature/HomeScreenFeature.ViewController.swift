@@ -15,13 +15,20 @@ extension HomeScreenFeature {
 
             subscribe()
         }
-        
-        private func subscribe() {
-            viewStore.publisher
-                .sink { state in
-                    print(state)
-                }
-                .store(in: &cancellables)
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+
+            viewStore.send(.didLoad)
         }
+    }
+}
+
+private extension HomeScreenFeature.ViewController {
+    func subscribe() {
+        viewStore.publisher.sink { state in
+            print(state)
+        }
+        .store(in: &cancellables)
     }
 }

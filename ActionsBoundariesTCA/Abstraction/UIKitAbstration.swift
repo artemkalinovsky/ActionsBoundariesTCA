@@ -78,14 +78,19 @@ import ComposableArchitecture
 //}
 
 
-class TCAViewController<State: Equatable, Action>: UIViewController {
+class TCAViewController<FeatureState: Equatable&ViewStateProvider, FeatureAction: ViewActionProvider>: UIViewController where FeatureState.ViewState: Equatable {
     var cancellables: Set<AnyCancellable> = []
-    var store: Store<State, Action>
-    var viewStore: ViewStore<State, Action>
+    var store: Store<FeatureState, FeatureAction>
+    var viewStore: ViewStore<FeatureState.ViewState, FeatureAction.ViewAction>
 
-    public init(store: Store<State, Action>) {
+
+    init(store: Store<FeatureState, FeatureAction>) {
         self.store = store
-        viewStore = .init(store)
+        self.viewStore = ViewStore(
+            store.scope(state: { $0.viewState }, action: { FeatureAction.view($0) }),
+            removeDuplicates: { $0 == $1 }
+        )
+
         super.init(nibName: nil, bundle: nil)
     }
 
