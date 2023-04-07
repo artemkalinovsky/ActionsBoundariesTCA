@@ -21,6 +21,12 @@ extension HomeScreenFeature {
 
             viewStore.send(.didLoad)
         }
+
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+
+            viewStore.send(.list)
+        }
     }
 }
 
