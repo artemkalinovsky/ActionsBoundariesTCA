@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="Tj8-od-vOd">
             <objects>
-                <tableViewController id="mRm-4c-azP" sceneMemberID="viewController">
+                <tableViewController id="mRm-4c-azP" customClass="InitialViewController" customModule="ActionsBoundariesTCA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="duU-bO-IEY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,6 +35,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="sTN-KM-kB8" appends="YES" id="jAg-i1-r3w"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="1Df-pC-vrA" style="IBUITableViewCellStyleDefault" id="fz8-Au-ed6">
                                         <rect key="frame" x="0.0" y="104.66666793823242" width="393" height="54.666667938232422"/>
@@ -53,7 +56,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="vGP-fE-kSv" kind="show" id="3Oi-n4-Hfb"/>
+                                            <outletCollection property="gestureRecognizers" destination="5yI-MT-kx7" appends="YES" id="BJw-zJ-MOR"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -67,18 +70,18 @@
                     <navigationItem key="navigationItem" id="upg-K1-rT9"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WdJ-l9-RSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sTN-KM-kB8">
+                    <connections>
+                        <action selector="didTapOnUIKitExampleCell:" destination="mRm-4c-azP" id="uLi-za-Pse"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="5yI-MT-kx7">
+                    <connections>
+                        <action selector="didTapOnSwiftUIExampleCell:" destination="mRm-4c-azP" id="vPD-Lj-vXC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="615" y="-78"/>
-        </scene>
-        <!--SwiftUI Example Hosting Controller-->
-        <scene sceneID="YBF-71-IUw">
-            <objects>
-                <hostingController modalPresentationStyle="overFullScreen" id="vGP-fE-kSv" customClass="SwiftUIExampleHostingController" customModule="ActionsBoundariesTCA" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="r6Y-Me-JQM"/>
-                </hostingController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I0N-iL-ETa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1975" y="349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qH6-x5-W4Y">

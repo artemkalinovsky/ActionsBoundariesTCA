@@ -35,6 +35,16 @@ struct HomeScreenFeature: ReducerProtocol {
 
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
         print(action)
-        return .none
+
+        switch action {
+        case .view(.list):
+            let newTodos: [Todo] = [.init(name: "Wash Car", complete: false), .init(name: "Goto Gym", complete: true)]
+            return .task { .reducer(.listResult(.success(newTodos))) }
+        case .reducer(.listResult(.success(let todos))):
+            state.todos = .init(uniqueElements: todos)
+            return .none
+        default:
+            return .none
+        }
     }
 }

@@ -22,7 +22,7 @@
 		C856B9A429E0AF0C0086D454 /* Abstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C856B9A329E0AF0C0086D454 /* Abstraction.swift */; };
 		C8FDE8CF29E1A15500133036 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDE8CE29E1A15500133036 /* Todo.swift */; };
 		C8FDE8D129E1A15E00133036 /* TodoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDE8D029E1A15E00133036 /* TodoError.swift */; };
-		C8FDE8D329E1A4F400133036 /* SwiftUIExampleHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDE8D229E1A4F400133036 /* SwiftUIExampleHostingController.swift */; };
+		C8FDE8D529E1B29A00133036 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDE8D429E1B29A00133036 /* InitialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 		C856B9A329E0AF0C0086D454 /* Abstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abstraction.swift; sourceTree = "<group>"; };
 		C8FDE8CE29E1A15500133036 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		C8FDE8D029E1A15E00133036 /* TodoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoError.swift; sourceTree = "<group>"; };
-		C8FDE8D229E1A4F400133036 /* SwiftUIExampleHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExampleHostingController.swift; sourceTree = "<group>"; };
+		C8FDE8D429E1B29A00133036 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,7 @@
 			children = (
 				C856B98829E05B2F0086D454 /* Info.plist */,
 				C856B97A29E05B2D0086D454 /* AppDelegate.swift */,
+				C8FDE8D429E1B29A00133036 /* InitialViewController.swift */,
 				C856B97C29E05B2D0086D454 /* SceneDelegate.swift */,
 				C856B98329E05B2F0086D454 /* Assets.xcassets */,
 				C856B9A129E0AEE00086D454 /* Architecture */,
@@ -130,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				C856B99F29E06E500086D454 /* SwiftUIAbstractionUsage.swift */,
-				C8FDE8D229E1A4F400133036 /* SwiftUIExampleHostingController.swift */,
 			);
 			path = SwiftUIExample;
 			sourceTree = "<group>";
@@ -222,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C856B97B29E05B2D0086D454 /* AppDelegate.swift in Sources */,
+				C8FDE8D529E1B29A00133036 /* InitialViewController.swift in Sources */,
 				C856B99E29E0664D0086D454 /* HomeScreenFeature.ViewController.swift in Sources */,
 				C856B99629E05D700086D454 /* UIKitAbstration.swift in Sources */,
 				C856B9A029E06E500086D454 /* SwiftUIAbstractionUsage.swift in Sources */,
@@ -232,7 +233,6 @@
 				C856B97D29E05B2D0086D454 /* SceneDelegate.swift in Sources */,
 				C8FDE8D129E1A15E00133036 /* TodoError.swift in Sources */,
 				C8FDE8CF29E1A15500133036 /* Todo.swift in Sources */,
-				C8FDE8D329E1A4F400133036 /* SwiftUIExampleHostingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
