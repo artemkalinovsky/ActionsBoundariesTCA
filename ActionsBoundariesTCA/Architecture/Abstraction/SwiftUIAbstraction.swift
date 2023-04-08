@@ -1,34 +1,34 @@
 import SwiftUI
 import ComposableArchitecture
 
-public protocol TCAView: View where Body == WithViewStore<ScopedState, ScopedAction, Content> {
+public protocol TCAView: View where Body == WithViewStore<ViewState, ViewAction, Content> {
+    associatedtype FeatureState
+    associatedtype FeatureAction
+
     associatedtype ViewState
     associatedtype ViewAction
 
-    associatedtype ScopedState
-    associatedtype ScopedAction
-
     associatedtype Content
 
-    var store: Store<ViewState, ViewAction> { get }
+    var store: Store<FeatureState, FeatureAction> { get }
 
-    func isDuplicate(_ a: ScopedState, _ b: ScopedState) -> Bool
+    func isDuplicate(_ a: ViewState, _ b: ViewState) -> Bool
 
-    func scopeState(_ state: ViewState) -> ScopedState
-    func scopeAction(_ action: ScopedAction) -> ViewAction
+    func scopeState(_ state: FeatureState) -> ViewState
+    func scopeAction(_ action: ViewAction) -> FeatureAction
 
-    @ViewBuilder func storeView(_ viewStore: ViewStore<ScopedState, ScopedAction>) -> Content
+    @ViewBuilder func storeView(_ viewStore: ViewStore<ViewState, ViewAction>) -> Content
 }
 
-extension TCAView where ScopedState: Equatable {
-    public func isDuplicate(_ a: ScopedState, _ b: ScopedState) -> Bool { a == b }
+extension TCAView where ViewState: Equatable {
+    public func isDuplicate(_ a: ViewState, _ b: ViewState) -> Bool { a == b }
 }
 
-extension TCAView where ScopedState == ViewState {
-    public func scopeState(_ state: ViewState) -> ScopedState { state }
+extension TCAView where ViewState == FeatureState {
+    public func scopeState(_ state: FeatureState) -> ViewState { state }
 }
-extension TCAView where ViewAction == ScopedAction {
-    public func scopeAction(_ action: ScopedAction) -> ViewAction { action }
+extension TCAView where FeatureAction == ViewAction {
+    public func scopeAction(_ action: ViewAction) -> FeatureAction { action }
 }
 
 extension TCAView {
@@ -41,10 +41,10 @@ extension TCAView {
     }
 }
 
-extension TCAView where ViewState: ViewStateProvider, ScopedState == ViewState.ViewState {
-    public func scopeState(_ state: ViewState) -> ScopedState { state.viewState }
+extension TCAView where FeatureState: ViewStateProvider, ViewState == FeatureState.ViewState {
+    public func scopeState(_ state: FeatureState) -> ViewState { state.viewState }
 }
 
-extension TCAView where ViewAction: ViewActionProvider, ScopedAction == ViewAction.ViewAction {
-    public func scopeAction(_ action: ScopedAction) -> ViewAction { ViewAction.view(action) }
+extension TCAView where FeatureAction: ViewActionProvider, ViewAction == FeatureAction.ViewAction {
+    public func scopeAction(_ action: ViewAction) -> FeatureAction { FeatureAction.view(action) }
 }
