@@ -20,6 +20,9 @@
 		C856B99E29E0664D0086D454 /* HomeScreenFeature.ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C856B99D29E0664D0086D454 /* HomeScreenFeature.ViewController.swift */; };
 		C856B9A029E06E500086D454 /* SwiftUIAbstractionUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C856B99F29E06E500086D454 /* SwiftUIAbstractionUsage.swift */; };
 		C856B9A429E0AF0C0086D454 /* Abstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C856B9A329E0AF0C0086D454 /* Abstraction.swift */; };
+		C8FDE8CF29E1A15500133036 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDE8CE29E1A15500133036 /* Todo.swift */; };
+		C8FDE8D129E1A15E00133036 /* TodoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDE8D029E1A15E00133036 /* TodoError.swift */; };
+		C8FDE8D329E1A4F400133036 /* SwiftUIExampleHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDE8D229E1A4F400133036 /* SwiftUIExampleHostingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		C856B99D29E0664D0086D454 /* HomeScreenFeature.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenFeature.ViewController.swift; sourceTree = "<group>"; };
 		C856B99F29E06E500086D454 /* SwiftUIAbstractionUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAbstractionUsage.swift; sourceTree = "<group>"; };
 		C856B9A329E0AF0C0086D454 /* Abstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abstraction.swift; sourceTree = "<group>"; };
+		C8FDE8CE29E1A15500133036 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		C8FDE8D029E1A15E00133036 /* TodoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoError.swift; sourceTree = "<group>"; };
+		C8FDE8D229E1A4F400133036 /* SwiftUIExampleHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExampleHostingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +79,13 @@
 				C856B98829E05B2F0086D454 /* Info.plist */,
 				C856B97A29E05B2D0086D454 /* AppDelegate.swift */,
 				C856B97C29E05B2D0086D454 /* SceneDelegate.swift */,
-				C856B99F29E06E500086D454 /* SwiftUIAbstractionUsage.swift */,
 				C856B98329E05B2F0086D454 /* Assets.xcassets */,
-				C856B9A129E0AEE00086D454 /* Core */,
-				C856B99729E064930086D454 /* HomeScreenFeature */,
+				C856B9A129E0AEE00086D454 /* Architecture */,
 				C856B98529E05B2F0086D454 /* LaunchScreen.storyboard */,
 				C856B98029E05B2D0086D454 /* Main.storyboard */,
+				C8FDE8CD29E1A14400133036 /* Model */,
+				C8FDE8CC29E1A0DE00133036 /* SwiftUIExample */,
+				C8FDE8CB29E1A0D100133036 /* UIKitExample */,
 			);
 			path = ActionsBoundariesTCA;
 			sourceTree = "<group>";
@@ -103,12 +110,38 @@
 			path = HomeScreenFeature;
 			sourceTree = "<group>";
 		};
-		C856B9A129E0AEE00086D454 /* Core */ = {
+		C856B9A129E0AEE00086D454 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
 				C856B99429E05D490086D454 /* Abstraction */,
 			);
-			path = Core;
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		C8FDE8CB29E1A0D100133036 /* UIKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				C856B99729E064930086D454 /* HomeScreenFeature */,
+			);
+			path = UIKitExample;
+			sourceTree = "<group>";
+		};
+		C8FDE8CC29E1A0DE00133036 /* SwiftUIExample */ = {
+			isa = PBXGroup;
+			children = (
+				C856B99F29E06E500086D454 /* SwiftUIAbstractionUsage.swift */,
+				C8FDE8D229E1A4F400133036 /* SwiftUIExampleHostingController.swift */,
+			);
+			path = SwiftUIExample;
+			sourceTree = "<group>";
+		};
+		C8FDE8CD29E1A14400133036 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C8FDE8CE29E1A15500133036 /* Todo.swift */,
+				C8FDE8D029E1A15E00133036 /* TodoError.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +230,9 @@
 				C856B99229E05C6A0086D454 /* SwiftUIAbstraction.swift in Sources */,
 				C856B99C29E065ED0086D454 /* HomeScreenFeature.Builder.swift in Sources */,
 				C856B97D29E05B2D0086D454 /* SceneDelegate.swift in Sources */,
+				C8FDE8D129E1A15E00133036 /* TodoError.swift in Sources */,
+				C8FDE8CF29E1A15500133036 /* Todo.swift in Sources */,
+				C8FDE8D329E1A4F400133036 /* SwiftUIExampleHostingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

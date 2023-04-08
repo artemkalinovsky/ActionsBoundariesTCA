@@ -1,17 +1,6 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct TodoError: Error, Equatable {
-    let reason: String
-}
-
-struct Todo: Identifiable, Equatable {
-    var id = UUID()
-
-    let name: String
-    let complete: Bool
-}
-
 struct TodoFeature: ReducerProtocol {
     enum Action: Equatable, ViewActionProvider {
         enum ViewAction: Equatable {

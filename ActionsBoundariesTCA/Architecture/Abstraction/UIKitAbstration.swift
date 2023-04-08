@@ -2,7 +2,7 @@ import UIKit
 import Combine
 import ComposableArchitecture
 
-class TCAViewController<FeatureState: Equatable&ViewStateProvider, FeatureAction: ViewActionProvider>: UIViewController where FeatureState.ViewState: Equatable {
+class TCAViewController<FeatureState: Equatable&ViewStateProvider, FeatureAction: ViewActionProvider>: UIViewController {
     var cancellables: Set<AnyCancellable> = []
     let viewStore: ViewStore<FeatureState.ViewState, FeatureAction.ViewAction>
 

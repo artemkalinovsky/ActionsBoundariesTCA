@@ -1,8 +1,8 @@
 import Foundation
 
 @dynamicMemberLookup
-public protocol ViewStateProvider {
-    associatedtype ViewState
+public protocol ViewStateProvider: Equatable {
+    associatedtype ViewState: Equatable
 
     var viewState: ViewState { get set }
 }
